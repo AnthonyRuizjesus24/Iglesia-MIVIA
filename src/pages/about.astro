@@ -1,0 +1,80 @@
+---
+import Hero from '../components/Hero.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de MIVIA</title>
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="icon" href="/eve.svg" type="image/svg+xml">
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <Header/>
+    <Hero/>
+    <main class="py-12 px-4 md:px-8">
+      <!-- Sección de Historia -->
+      <section id="historia" class="mb-12">
+        <h2 class="text-4xl font-bold mb-6 text-center text-blue-600">Nuestra Historia</h2>
+        <p class="text-lg leading-relaxed mb-4">
+          [Aquí va un breve resumen sobre la fundación y evolución de la iglesia. Puedes detallar los momentos clave y el impacto que la iglesia ha tenido en la comunidad.]
+        </p>
+      </section>
+
+      <!-- Sección de Equipo de Liderazgo -->
+      <section id="equipo" class="mb-12">
+        <h2 class="text-4xl font-bold mb-6 text-center text-blue-600">Nuestro Equipo de Liderazgo</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Miembro del Equipo -->
+          <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+            <img src="/images/pastor1.jpg" alt="Pastor Juan Pérez" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+            <h3 class="text-2xl font-semibold mb-2">Pastor Juan Pérez</h3>
+            <p class="text-gray-600">
+              [Breve biografía del Pastor Juan Pérez. Incluye sus antecedentes, su papel en la iglesia y su visión.]
+            </p>
+          </div>
+          <!-- Miembro del Equipo -->
+          <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+            <img src="/images/pastor2.jpg" alt="Pastora Ana Gómez" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+            <h3 class="text-2xl font-semibold mb-2">Pastora Ana Gómez</h3>
+            <p class="text-gray-600">
+              [Breve biografía de la Pastora Ana Gómez. Incluye sus antecedentes, su papel en la iglesia y su visión.]
+            </p>
+          </div>
+          <!-- Agregar más miembros del equipo aquí -->
+        </div>
+      </section>
+
+      <!-- Sección de Valores y Creencias -->
+      <section id="valores" class="mb-12">
+        <h2 class="text-4xl font-bold mb-6 text-center text-blue-600">Nuestros Valores y Creencias</h2>
+        <div class="space-y-6">
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <h3 class="text-2xl font-semibold mb-2">Valores</h3>
+            <ul class="list-disc list-inside text-gray-600">
+              <li>[Valor 1: Breve descripción]</li>
+              <li>[Valor 2: Breve descripción]</li>
+              <li>[Valor 3: Breve descripción]</li>
+              <!-- Agregar más valores aquí -->
+            </ul>
+          </div>
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <h3 class="text-2xl font-semibold mb-2">Creencias</h3>
+            <ul class="list-disc list-inside text-gray-600">
+              <li>[Creencia 1: Breve descripción]</li>
+              <li>[Creencia 2: Breve descripción]</li>
+              <li>[Creencia 3: Breve descripción]</li>
+              <!-- Agregar más creencias aquí -->
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer/>
+  </body>
+</html>

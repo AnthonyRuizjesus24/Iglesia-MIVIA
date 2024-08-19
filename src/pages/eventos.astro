@@ -1,64 +1,123 @@
 ---
 import Hero from '../components/Hero.astro';
-import EventCard from '../components/EventCard.astro';
-import { events } from '../data/events.js';
-import MinistryCard from '../components/MinistryCard.astro';
-import ContactForm from '../components/ContactForm.astro';
-import { ministries } from '../data/ministries.js';
-import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 ---
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MIVIA</title>
-  <link rel="stylesheet" href="/styles/global.css">
-</head>
-
-<body class="bg-gray-100 text-gray-900">
-  <Header/>
-
-  <main>
-   <Hero/>
-   <section class="py-12 md:py-16">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Eventos Destacados</h2>
-      <p class="text-base md:text-lg mb-12">No te pierdas nuestros próximos eventos.</p>
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {events.map(event => (
-          <EventCard event={event} key={event.id} />
-        ))}
-      </div>
-    </div>
-  </section>
-
-    <!-- Sección de Ministerios -->
-    <section class="bg-gray-200 py-12 md:py-16">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Nuestros Ministerios</h2>
-        <p class="text-base md:text-lg mb-12">Explora nuestras diferentes áreas de servicio.</p>
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {ministries.map(ministry => (
-            <MinistryCard ministry={ministry} />
-          ))}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTOS</title>
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="icon" href="/eve.svg" type="image/svg+xml">
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <Header/>
+    <main>
+      <Hero/>
+      <!-- Introducción a los Eventos -->
+      <section id="intro" class="py-16 px-6 bg-white">
+        <div class="container mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-4">¿Qué son nuestros eventos?</h2>
+          <p class="text-lg mb-8">
+            Nuestros eventos están diseñados para brindar experiencias únicas e inolvidables. Ya sea que busques crecimiento personal, conexión espiritual o simplemente disfrutar de actividades emocionantes, tenemos algo para ti.
+          </p>
+          <a href="#events" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300">Explorar Eventos</a>
         </div>
-      </div>
-    </section>
-
-    <!-- Sección de Contacto -->
-    <section class="py-12 md:py-16">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Contacto</h2>
-        <p class="text-base md:text-lg mb-12">¿Tienes preguntas o quieres saber más? ¡Contáctanos!</p>
-        <ContactForm />
-      </div>
-    </section>
-  </main>
-<Footer/>
-  
-</body>
+      </section>
+      <!-- Próximos Eventos -->
+      <section id="events" class="py-16 px-6 bg-gray-100">
+        <div class="container mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-8">Próximos Eventos</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Evento 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-semibold mb-2">Evento de Música</h3>
+              <p class="text-gray-700 mb-4">Un evento emocionante con actuaciones en vivo de artistas locales. Ven y disfruta de una noche de buena música.</p>
+              <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition duration-300">Más Información</a>
+            </div>
+            <!-- Evento 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-semibold mb-2">Taller de Cocina</h3>
+              <p class="text-gray-700 mb-4">Aprende a cocinar platos deliciosos con nuestros chefs expertos. ¡Ideal para todos los niveles!</p>
+              <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition duration-300">Más Información</a>
+            </div>
+            <!-- Evento 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-semibold mb-2">Retiro Espiritual</h3>
+              <p class="text-gray-700 mb-4">Un retiro diseñado para la reflexión y el crecimiento espiritual en un entorno tranquilo y relajante.</p>
+              <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition duration-300">Más Información</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Destacados -->
+      <section id="highlights" class="py-16 px-6">
+        <div class="container mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-8">Eventos Destacados</h2>
+          <div class="flex flex-wrap justify-center gap-8">
+            <!-- Destacado 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2 lg:w-1/3">
+              <img src="/imagenes/eventos/eventos.jpg" alt="Destacado 1" class="w-full h-48 object-cover rounded-lg mb-4">
+              <h3 class="text-2xl font-semibold mb-2">Concierto Especial</h3>
+              <p class="text-gray-700 mb-4">Disfruta de un concierto único con bandas locales y nacionales.</p>
+              <a href="#" class="bg-yellow-500 text-gray-900 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-600 transition duration-300">Ver Más</a>
+            </div>
+            <!-- Destacado 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2 lg:w-1/3">
+              <img src="/eventos/danza.jpg" alt="Destacado 2" class="w-full h-48 object-cover rounded-lg mb-4">
+              <h3 class="text-2xl font-semibold mb-2">Feria de Arte</h3>
+              <p class="text-gray-700 mb-4">Explora una variedad de obras de arte de artistas locales y nacionales.</p>
+              <a href="#" class="bg-yellow-500 text-gray-900 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-600 transition duration-300">Ver Más</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonios -->
+      <section id="testimonials" class="py-16 px-6 bg-gray-200">
+        <div class="container mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-8">Lo que dicen nuestros asistentes</h2>
+          <div class="flex flex-wrap justify-center gap-8">
+            <!-- Testimonio 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2 lg:w-1/3">
+              <p class="text-gray-700 mb-4">“Los eventos son siempre bien organizados y llenos de energía positiva. ¡No me los pierdo!”</p>
+              <p class="font-semibold">Juan Pérez</p>
+              <p class="text-gray-600">Asistente frecuente</p>
+            </div>
+            <!-- Testimonio 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2 lg:w-1/3">
+              <p class="text-gray-700 mb-4">“Cada evento es una experiencia nueva y emocionante. ¡Altamente recomendado!”</p>
+              <p class="font-semibold">Ana Gómez</p>
+              <p class="text-gray-600">Participante entusiasta</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Formulario de Contacto -->
+      <section id="contact" class="py-16 px-6 bg-white">
+        <div class="container mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-8">Contáctanos</h2>
+          <form action="#" method="POST" class="mx-auto max-w-lg">
+            <div class="mb-4">
+              <label for="name" class="block text-left text-gray-700 font-semibold mb-2">Nombre</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-left text-gray-700 font-semibold mb-2">Correo Electrónico</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="mb-4">
+              <label for="message" class="block text-left text-gray-700 font-semibold mb-2">Mensaje</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+            </div>
+            <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300">Enviar Mensaje</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <Footer/>
+  </body>
 </html>

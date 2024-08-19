@@ -24,31 +24,67 @@ import Footer from '../components/Footer.astro';
 
   <main>
    <Hero/>
-   <section class="py-12 md:py-16">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Eventos Destacados</h2>
-      <p class="text-base md:text-lg mb-12">No te pierdas nuestros próximos eventos.</p>
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {events.map(event => (
-          <EventCard event={event} key={event.id} />
-        ))}
+     <!-- Misión y Visión -->
+     <section id="mision-vision" class="py-10">
+      <div class="container mx-auto">
+          <div class="flex flex-col md:flex-row md:space-x-10">
+              <!-- Misión -->
+              <div class="md:w-1/2 bg-white p-6 shadow-lg rounded-lg mb-6 md:mb-0">
+                  <h2 class="text-3xl font-bold mb-4">Nuestra Misión</h2>
+                  <p>Nuestra misión es ser un faro de luz en la comunidad de Iquitos, proporcionando un lugar de adoración, enseñanza y apoyo espiritual para todos.</p>
+              </div>
+              <!-- Visión -->
+              <div class="md:w-1/2 bg-white p-6 shadow-lg rounded-lg">
+                  <h2 class="text-3xl font-bold mb-4">Nuestra Visión</h2>
+                  <p>Visualizamos una comunidad vibrante y unida, transformada por el amor y la gracia de Dios, impactando a nuestra ciudad y al mundo con el evangelio.</p>
+              </div>
+          </div>
       </div>
-    </div>
   </section>
-
-    <!-- Sección de Ministerios -->
-    <section class="bg-gray-200 py-12 md:py-16">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Nuestros Ministerios</h2>
-        <p class="text-base md:text-lg mb-12">Explora nuestras diferentes áreas de servicio.</p>
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {ministries.map(ministry => (
-            <MinistryCard ministry={ministry} />
-          ))}
+   <!-- Horario de Servicios -->
+   <section id="horario" class="bg-gray-200 py-10">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-4 text-center">Horario de Servicios</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <h3 class="text-2xl font-semibold mb-2">Servicio de Domingo</h3>
+                <p class="mb-4">10:00 AM - 12:00 PM</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <h3 class="text-2xl font-semibold mb-2">Estudio Bíblico</h3>
+                <p class="mb-4">Miércoles 7:00 PM - 8:30 PM</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <h3 class="text-2xl font-semibold mb-2">Reunión de Oración</h3>
+                <p class="mb-4">Viernes 6:00 PM - 7:30 PM</p>
+            </div>
+            <!-- Agrega más horarios si es necesario -->
         </div>
+    </div>
+</section>
+<section id="noticias" class="py-10">
+  <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-4 text-center">Noticias y Anuncios</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 shadow-lg rounded-lg">
+              <h3 class="text-2xl font-semibold mb-2">Anuncio 1</h3>
+              <p class="mb-4">Detalles sobre el anuncio o evento...</p>
+              <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Leer Más</a>
+          </div>
+          <div class="bg-white p-6 shadow-lg rounded-lg">
+              <h3 class="text-2xl font-semibold mb-2">Anuncio 2</h3>
+              <p class="mb-4">Detalles sobre el anuncio o evento...</p>
+              <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Leer Más</a>
+          </div>
+          <div class="bg-white p-6 shadow-lg rounded-lg">
+              <h3 class="text-2xl font-semibold mb-2">Anuncio 3</h3>
+              <p class="mb-4">Detalles sobre el anuncio o evento...</p>
+              <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Leer Más</a>
+          </div>
+          <!-- Agrega más noticias o anuncios si es necesario -->
       </div>
-    </section>
-
+  </div>
+</section>
     <!-- Sección de Contacto -->
     <section class="py-12 md:py-16">
       <div class="container mx-auto px-4 text-center">

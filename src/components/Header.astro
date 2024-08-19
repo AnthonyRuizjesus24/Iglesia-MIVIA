@@ -8,11 +8,15 @@
       </svg>
     </div>
     <ul class="hidden md:flex space-x-8">
-      <li><a href="/" class="hover:text-gray-400">Inicio</a></li>
-      <li><a href="/eventos" class="hover:text-gray-400">Eventos</a></li>
-      <li><a href="/ministerios" class="hover:text-gray-400">Ministerios</a></li>
-      <li><a href="/contacto" class="hover:text-gray-400">Contacto</a></li>
-      <li><a href="/sedes" class="hover:text-gray-400">Sedes</a></li>
+      <li><a href="/" class="nav-link">Inicio</a></li>
+      <li><a href="/eventos" class="nav-link">Eventos</a></li>
+      <li><a href="/ministerios" class="nav-link">Ministerios</a></li>
+      <li><a href="/contacto" class="nav-link">Contacto</a></li>
+      <li><a href="/sedes" class="nav-link">Sedes</a></li>
+      <li><a href="/about" class="nav-link">Acerca de</a></li>
+      <li><a href="/recursos" class="nav-link">Recursos</a></li>
+      <li><a href="/galeria" class="nav-link">Galería de Fotos</a></li>
+      <li><a href="/blog" class="nav-link">Blog y Noticias</a></li>
     </ul>
     <button id="menu-toggle" class="md:hidden text-2xl">☰</button>
   </nav>
@@ -22,18 +26,31 @@
       <button id="close-menu" class="text-2xl">✖</button>
     </div>
     <ul class="flex flex-col items-center mt-6">
-      <li><a href="/" class="py-2 text-lg">Inicio</a></li>
-      <li><a href="/eventos" class="py-2 text-lg">Eventos</a></li>
-      <li><a href="/ministerios" class="py-2 text-lg">Ministerios</a></li>
-      <li><a href="/contacto" class="py-2 text-lg">Contacto</a></li>
+      <li><a href="/" class="nav-link">Inicio</a></li>
+      <li><a href="/eventos" class="nav-link">Eventos</a></li>
+      <li><a href="/ministerios" class="nav-link">Ministerios</a></li>
+      <li><a href="/contacto" class="nav-link">Contacto</a></li>
+      <li><a href="/about" class="nav-link">Acerca de</a></li>
+      <li><a href="/recursos" class="nav-link">Recursos</a></li>
+      <li><a href="/galeria" class="nav-link">Galería de Fotos</a></li>
+      <li><a href="/blog" class="nav-link">Blog y Noticias</a></li>
     </ul>
   </div>
 </header>
 
 
-<!-- Script for Mobile Menu -->
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+      }
+    });
+
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const closeMenu = document.getElementById('close-menu');
